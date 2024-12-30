@@ -1,56 +1,101 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: #f8f9fa;
-}
+/* Existing styles omitted for brevity */
 
-.header {
+/* Button for creating an article */
+#createArticleBtn {
+  margin-top: 10px;
+  padding: 10px 20px;
   background-color: #343a40;
   color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+#createArticleBtn:hover {
+  background-color: #555;
+}
+
+/* Modal styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.2s, opacity 0.2s;
+}
+
+.modal-content {
+  background-color: white;
   padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 400px;
   text-align: center;
 }
 
-.header input {
-  margin-top: 10px;
-  padding: 10px;
-  width: 80%;
-  max-width: 500px;
-  border: none;
-  border-radius: 5px;
+.modal-content h2 {
+  margin-bottom: 20px;
 }
 
-.article-container {
+.modal-content form {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 20px;
+  flex-direction: column;
 }
 
-.article-card {
-  background-color: white;
+.modal-content form input,
+.modal-content form textarea {
+  margin-bottom: 10px;
+  padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  margin: 10px;
-  padding: 20px;
-  width: 300px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
 }
 
-.article-card:hover {
-  transform: translateY(-5px);
-}
-
-.article-title {
-  font-size: 1.5em;
-  margin-bottom: 10px;
-  color: #343a40;
-}
-
-.article-content {
+.modal-content form button {
+  padding: 10px;
+  background-color: #343a40;
+  color: white;
+  border: none;
+  border-radius: 5px;
   font-size: 1em;
-  color: #555;
+  cursor: pointer;
+}
+
+.modal-content form button:hover {
+  background-color: #555;
+}
+
+.close-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background-color: #c9302c;
+}
+
+/* Hidden class for modal */
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
 }
