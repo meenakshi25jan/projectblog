@@ -7,22 +7,16 @@ const articles = [
     title: "Generative AI in Real World",
     content: "Explore how generative AI is revolutionizing industries with creative solutions.",
   },
-  {
-    title: "Discriminative AI in Automobiles",
-    content: "Discover how discriminative AI enhances safety and efficiency in autonomous vehicles.",
-  },
-  {
-    title: "Top 6 Architectural Patterns",
-    content: "Unveil the most effective software architecture patterns for scalable solutions.",
-  },
-  {
-    title: "REST API Best Practices",
-    content: "Master the dos and don'ts of designing robust REST APIs in Spring Boot.",
-  },
 ];
 
 const articleContainer = document.getElementById("articleContainer");
 const searchBar = document.getElementById("searchBar");
+const createArticleBtn = document.getElementById("createArticleBtn");
+const createArticleModal = document.getElementById("createArticleModal");
+const closeModalBtn = document.getElementById("closeModalBtn");
+const addArticleForm = document.getElementById("addArticleForm");
+const articleTitleInput = document.getElementById("articleTitle");
+const articleContentInput = document.getElementById("articleContent");
 
 // Function to render articles
 function renderArticles(filter = "") {
@@ -48,6 +42,35 @@ function renderArticles(filter = "") {
   });
 }
 
+// Function to add a new article
+function addArticle(event) {
+  event.preventDefault();
+  const newArticle = {
+    title: articleTitleInput.value.trim(),
+    content: articleContentInput.value.trim(),
+  };
+
+  if (newArticle.title && newArticle.content) {
+    articles.push(newArticle);
+    renderArticles(); // Re-render articles
+    addArticleForm.reset(); // Clear form inputs
+    toggleModal(false); // Close modal
+  } else {
+    alert("Both title and content are required!");
+  }
+}
+
+// Function to toggle modal visibility
+function toggleModal(show) {
+  if (show) {
+    createArticleModal.classList.remove("hidden");
+    createArticleModal.classList.add("visible");
+  } else {
+    createArticleModal.classList.remove("visible");
+    createArticleModal.classList.add("hidden");
+  }
+}
+
 // Initial render
 renderArticles();
 
@@ -55,3 +78,10 @@ renderArticles();
 searchBar.addEventListener("input", (e) => {
   renderArticles(e.target.value);
 });
+
+// Handle form submission
+addArticleForm.addEventListener("submit", addArticle);
+
+// Event listeners for modal
+createArticleBtn.addEventListener("click", () => toggleModal(true));
+closeModalBtn.addEventListener("click", () => toggleModal(false));
