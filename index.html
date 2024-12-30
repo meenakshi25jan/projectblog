@@ -10,10 +10,26 @@
   <header class="header">
     <h1>Article Hub</h1>
     <input type="text" id="searchBar" placeholder="Search articles...">
+    <button id="createArticleBtn">Create Article</button>
   </header>
+
   <main class="article-container" id="articleContainer">
     <!-- Articles will be dynamically loaded here -->
   </main>
+
+  <!-- Create Article Modal -->
+  <div id="createArticleModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Create a New Article</h2>
+      <form id="addArticleForm">
+        <input type="text" id="articleTitle" placeholder="Article Title" required>
+        <textarea id="articleContent" placeholder="Article Content" rows="5" required></textarea>
+        <button type="submit">Add Article</button>
+      </form>
+      <button id="closeModalBtn" class="close-btn">Close</button>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
