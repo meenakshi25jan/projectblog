@@ -1,101 +1,130 @@
-/* Existing styles omitted for brevity */
-
-/* Button for creating an article */
-#createArticleBtn {
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #343a40;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 1em;
-  cursor: pointer;
+/* Reset styles */
+body, h1, h2, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#createArticleBtn:hover {
-  background-color: #555;
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
 }
 
-/* Modal styles */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0.2s, opacity 0.2s;
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
 }
 
-.modal-content {
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 400px;
-  text-align: center;
+/* Header */
+header {
+    background: #0073b1;
+    color: #fff;
+    padding: 1rem 0;
 }
 
-.modal-content h2 {
-  margin-bottom: 20px;
+header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
 }
 
-.modal-content form {
-  display: flex;
-  flex-direction: column;
+header .logo span {
+    color: #fff;
 }
 
-.modal-content form input,
-.modal-content form textarea {
-  margin-bottom: 10px;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+header .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
 }
 
-.modal-content form button {
-  padding: 10px;
-  background-color: #343a40;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 1em;
-  cursor: pointer;
+header .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background 0.3s;
 }
 
-.modal-content form button:hover {
-  background-color: #555;
+header .nav-links a:hover {
+    background: #005983;
 }
 
-.close-btn {
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #d9534f;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 1em;
-  cursor: pointer;
+/* Hero Section */
+.hero {
+    background: #f4f4f4;
+    text-align: center;
+    padding: 3rem 1rem;
 }
 
-.close-btn:hover {
-  background-color: #c9302c;
+.hero h1 {
+    font-size: 2.5rem;
+    color: #0073b1;
 }
 
-/* Hidden class for modal */
-.hidden {
-  visibility: hidden;
-  opacity: 0;
+.hero p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
 }
 
-.visible {
-  visibility: visible;
-  opacity: 1;
+.hero .btn {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    margin: 0.5rem;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.hero .btn.primary {
+    background: #0073b1;
+    color: #fff;
+}
+
+.hero .btn.secondary {
+    background: #f4f4f4;
+    color: #0073b1;
+    border: 2px solid #0073b1;
+}
+
+.hero .btn:hover {
+    opacity: 0.9;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem 0;
+    background: #fff;
+    text-align: center;
+}
+
+.features .feature {
+    max-width: 300px;
+}
+
+.features h2 {
+    font-size: 1.5rem;
+    color: #0073b1;
+    margin-bottom: 0.5rem;
+}
+
+.features p {
+    font-size: 1rem;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 0.9rem;
 }
