@@ -1,35 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Article Hub</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Welcome Page</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="header">
-    <h1>Article Hub</h1>
-    <input type="text" id="searchBar" placeholder="Search articles...">
-    <button id="createArticleBtn">Create Article</button>
-  </header>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1 class="logo">Linked<span>In</span></h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#join">Join Now</a></li>
+                    <li><a href="#signin">Sign In</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <main class="article-container" id="articleContainer">
-    <!-- Articles will be dynamically loaded here -->
-  </main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to Your Professional Community</h1>
+            <p>Connect with colleagues, build your network, and explore opportunities.</p>
+            <div class="cta-buttons">
+                <a href="#join" class="btn primary">Join Now</a>
+                <a href="#signin" class="btn secondary">Sign In</a>
+            </div>
+        </div>
+    </section>
 
-  <!-- Create Article Modal -->
-  <div id="createArticleModal" class="modal hidden">
-    <div class="modal-content">
-      <h2>Create a New Article</h2>
-      <form id="addArticleForm">
-        <input type="text" id="articleTitle" placeholder="Article Title" required>
-        <textarea id="articleContent" placeholder="Article Content" rows="5" required></textarea>
-        <button type="submit">Add Article</button>
-      </form>
-      <button id="closeModalBtn" class="close-btn">Close</button>
-    </div>
-  </div>
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="feature">
+                <h2>Connect</h2>
+                <p>Expand your network and engage with professionals from various industries.</p>
+            </div>
+            <div class="feature">
+                <h2>Learn</h2>
+                <p>Access resources to grow your skills and stay updated with the latest trends.</p>
+            </div>
+            <div class="feature">
+                <h2>Opportunities</h2>
+                <p>Discover new job openings and elevate your career prospects.</p>
+            </div>
+        </div>
+    </section>
 
-  <script src="script.js"></script>
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 LinkedIn Clone. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
