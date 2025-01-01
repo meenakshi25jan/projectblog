@@ -5,7 +5,7 @@ document.getElementById('register-form').addEventListener('submit', async functi
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     
-    const response = await fetch('http://localhost:5000/register', {
+    const response = await fetch('http://localhost:5000/Register', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -17,6 +17,6 @@ document.getElementById('register-form').addEventListener('submit', async functi
     alert(data.message || 'An error occurred.');
     if (response.ok) {
         // Redirect to login page
-        window.location.href = 'login.html';
+        window.location.href = 'Login.html';
     }
 });
